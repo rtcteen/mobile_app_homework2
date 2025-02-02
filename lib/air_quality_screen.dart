@@ -14,7 +14,7 @@ class _AirQualityScreenState extends State<AirQualityScreen> {
   String city = "";
   double? temperature;
   String airQualityStatus = "";
-  Color aqiColor = Colors.black;
+  Color aqiColor = Colors.grey;
 
   Future<void> fetchData() async {
     final data = await airQualityService.fetchAirQuality();
@@ -36,7 +36,7 @@ class _AirQualityScreenState extends State<AirQualityScreen> {
       airQualityStatus = "Moderate";
       aqiColor = Colors.yellow;
     } else if (aqi <= 150) {
-      airQualityStatus = "Unhealthy for Sensitive Groups";
+      airQualityStatus = "Unhealthy for\nSensitive Groups";
       aqiColor = Colors.orange;
     } else if (aqi <= 200) {
       airQualityStatus = "Unhealthy";
@@ -109,6 +109,7 @@ class _AirQualityScreenState extends State<AirQualityScreen> {
                           const SizedBox(height: 10),
                           Text(
                             airQualityStatus,
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                               fontSize: 26,
                               fontWeight: FontWeight.w600,
