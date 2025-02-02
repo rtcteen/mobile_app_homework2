@@ -9,7 +9,7 @@ class AirQualityService {
     try {
       final response = await http.get(Uri.parse(apiUrl));
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 100) {
         final data = json.decode(response.body);
         return {
           'aqi': data['data']['aqi'],

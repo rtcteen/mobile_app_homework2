@@ -14,7 +14,7 @@ class _AirQualityScreenState extends State<AirQualityScreen> {
   String city = "";
   double? temperature;
   String airQualityStatus = "";
-  Color aqiColor = Colors.grey;
+  Color aqiColor = Colors.black;
 
   Future<void> fetchData() async {
     final data = await airQualityService.fetchAirQuality();
